@@ -48,7 +48,10 @@ class Quiz {
     }
 }
 
+// REGROUP ALL FUNCTION RELATIVE TO THE APP DISPLAY
+const display = {
 
+}
 
 
 // GAME LOGIC
