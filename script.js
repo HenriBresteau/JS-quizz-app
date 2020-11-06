@@ -48,6 +48,20 @@ class Quiz {
     }
 }
 
+
+
+
+// GAME LOGIC
+quizApp = () =>{
+    if (quiz.hasEnded()) {
+        // END
+    } else {
+        // QUESTION
+        // CHOICE
+        // PROGRESS
+    }
+}
 // CREATE QUIZ
 let quiz = new Quiz(questions);
+quizApp();
 console.log(quiz);
