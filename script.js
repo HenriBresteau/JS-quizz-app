@@ -60,6 +60,9 @@ const display = {
         <h3> Votre score est de : ${quiz.score} / ${quiz.questions.length} </h3>
         `;
         this.elementShown("question",endQuizHTML);
+    },
+    question : function () {
+        this.elementShown("question", quiz.getCurrentQuestion().text)
     }
 }
 
@@ -70,6 +73,7 @@ quizApp = () =>{
         display.endQuiz();
     } else {
         // QUESTION
+        display.question();
         // CHOICE
         // PROGRESS
     }
