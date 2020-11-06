@@ -50,7 +50,10 @@ class Quiz {
 
 // REGROUP ALL FUNCTION RELATIVE TO THE APP DISPLAY
 const display = {
-
+    elementShown : function (id,text) {
+        let element = document.getElementById(id);
+        element.innerHTML(text) 
+    },
 }
 
 
