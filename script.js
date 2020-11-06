@@ -52,7 +52,7 @@ class Quiz {
 const display = {
     elementShown : function (id,text) {
         let element = document.getElementById(id);
-        element.innerHTML(text) 
+        element.innerHTML= text; 
     },
     endQuiz: function () {
         let endQuizHTML = `
@@ -63,6 +63,19 @@ const display = {
     },
     question : function () {
         this.elementShown("question", quiz.getCurrentQuestion().text)
+    },
+    choices : function () {
+        let choices = quiz.getCurrentQuestion().choices;
+        guessHandler = (id,guess)=>{
+            document.getElementById(id).onclick = function() {
+                quiz.guess(guess);
+                quizApp();
+            }
+        }
+        for (let i = 0; i < choices.length; i++) {
+            this.elementShown(`choice${i}`, choices[i]);
+            guessHandler(`guess${i}`,choices[i]);
+        }
     }
 }
 
@@ -75,6 +88,7 @@ quizApp = () =>{
         // QUESTION
         display.question();
         // CHOICE
+        display.choices();
         // PROGRESS
     }
 }
