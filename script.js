@@ -55,11 +55,10 @@ const display = {
         element.innerHTML= text; 
     },
     endQuiz: function () {
-        let endQuizHTML = `
+        endQuizHTML = `
         <h1> Quiz terminé ! </h1>
-        <h3> Votre score est de : ${quiz.score} / ${quiz.questions.length} </h3>
-        `;
-        this.elementShown("question",endQuizHTML);
+        <h3> Votre score est de : ${quiz.score} / ${quiz.questions.length} </h3>`;
+        this.elementShown("quiz",endQuizHTML);
     },
     question : function () {
         this.elementShown("question", quiz.getCurrentQuestion().text)
