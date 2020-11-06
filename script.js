@@ -56,7 +56,7 @@ const display = {
 
 // GAME LOGIC
 quizApp = () =>{
-    if (quiz.hasEnded()) {
+    if (quiz.hadEnded()) {
         // END
     } else {
         // QUESTION
