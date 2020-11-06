@@ -47,3 +47,7 @@ class Quiz {
         return this.currentQuestionIndex >= this.questions.length;
     }
 }
+
+// CREATE QUIZ
+let quiz = new Quiz(questions);
+console.log(quiz);
