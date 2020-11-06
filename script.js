@@ -26,3 +26,24 @@ class Question {
             ['Math.ceil()','Math.floor()','Math.round()','Math.random()'],
             'Math.round()'),
     ];
+
+
+class Quiz {
+    constructor (questions) {
+        this.score = 0;
+        this.questions = questions;
+        this.currentQuestionIndex=0
+    }
+    getCurrentQuestion(){
+        return this.questions[this.currentQuestionIndex];
+    }
+    guess(answer){
+        if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
+            this.score++;
+        }
+        this.currentQuestionIndex++;
+    }
+    hadEnded(){
+        return this.currentQuestionIndex >= this.questions.length;
+    }
+}
