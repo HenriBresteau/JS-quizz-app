@@ -76,6 +76,10 @@ const display = {
             this.elementShown(`choice${i}`, choices[i]);
             guessHandler(`guess${i}`,choices[i]);
         }
+    },
+    progress : function () {
+        let currentQuestionNumber = quiz.currentQuestionIndex +1;
+        this.elementShown("progress",`Question ${currentQuestionNumber} sur ${quiz.questions.length}`);
     }
 }
 
@@ -90,6 +94,7 @@ quizApp = () =>{
         // CHOICE
         display.choices();
         // PROGRESS
+        display.progress()
     }
 }
 // CREATE QUIZ
